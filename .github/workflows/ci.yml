@@ -20,7 +20,7 @@ jobs:
     docker_checker:
         name: 'Docker Sanity checker'
         runs-on: ubuntu-latest
-               steps:
+        steps:
             - name: 'Check out the code'
               uses: actions/checkout@v1
 
