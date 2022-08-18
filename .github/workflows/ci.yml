@@ -33,6 +33,6 @@ jobs:
               uses: addnab/docker-run-action@v3
               with:
                 image: repoman-repo-qa:latest
-                options: INPUT_REPOMAN_ARGS=$INPUT_REPOMAN_ARGS INPUT_GENTOO_REPO=/tmp INPUT_PORTAGE_VERSION=latest INPUT_PROFILE=latest INPUT_PATH=/tmp 
+                options: --env INPUT_REPOMAN_ARGS=-p --env INPUT_GENTOO_REPO=/tmp --env INPUT_PORTAGE_VERSION=latest --env INPUT_PROFILE=latest --env INPUT_PATH=/tmp
                 run: printenv
                 #run: /entrypoint.sh
