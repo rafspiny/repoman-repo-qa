@@ -13,6 +13,12 @@ jobs:
     docker_checker:
         name: 'Docker Sanity checker'
         runs-on: ubuntu-latest
+        env:
+          INPUT_GENTOO_REPO: /tmp
+          INPUT_PORTAGE_VERSION: latest
+          INPUT_PROFILE: latest
+          INPUT_PATH: /tmp
+          INPUT_REPOMAN_ARGS: -p
         steps:
             - name: 'Check out the code'
               uses: actions/checkout@v1
