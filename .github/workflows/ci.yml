@@ -33,5 +33,5 @@ jobs:
               uses: addnab/docker-run-action@v3
               with:
                 image: repoman-repo-qa:latest
-                run: printenv
-                #run: /entrypoint.sh
+                #run: printenv
+                run: /entrypoint.sh
