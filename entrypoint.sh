@@ -8,12 +8,7 @@ profile="$INPUT_PROFILE"
 portage_version="$INPUT_PORTAGE_VERSION"
 gentoo_repo="$INPUT_GENTOO_REPO"
 
-apk add python3 py3-yaml py3-lxml git bash
-ln -s /usr/bin/python3 /usr/bin/python
 mkdir -p /etc/portage /var/cache/distfiles "$gentoo_repo"
-echo "portage:x:250:250:portage:/var/tmp/portage:/bin/false" >> /etc/passwd
-echo "portage::250:portage" >> /etc/group
-wget "https://www.gentoo.org/dtd/metadata.dtd" -O /var/cache/distfiles/metadata.dtd
 wget -O - "https://github.com/gentoo-mirror/gentoo/archive/master.tar.gz" | tar xz -C "$gentoo_repo" --strip-components=1
 
 if [ "$profile" = "latest" ]; then
@@ -28,8 +23,8 @@ fi
 ln -s "$gentoo_repo/profiles/$profile" /etc/portage/make.profile
 
 if [ "$portage_version" = "latest" ]; then
-    portage_version=$(grep DIST "$gentoo_repo/sys-apps/portage/Manifest" | tail -1 | cut -d ' ' -f 2)
-    portage_version=${portage_version%.tar.bz2}
+    portage_version=$(grep DIST "$gentoo_repo/sys-apps/portage/Manifest" | tail -1 | cut -d ' ' -f 2 | sed s/.tar.bz2//)
+    portage_version=${portage_version%.tar.gz}
     portage_version=${portage_version#portage-} # e.g. "2.3.20"
 fi
 echo "Using portage version \"$portage_version\""

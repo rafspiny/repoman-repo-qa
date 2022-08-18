@@ -20,12 +20,12 @@ jobs:
             - name: 'Build docker image'
               uses: docker/build-push-action@v2
               with:
-                tags: test-image:latest
+                tags: repoman-repo-qa:latest
                 push: false
 
             - name: 'Run command inside the docker container'
               uses: addnab/docker-run-action@v3
               with:
-                image: test-image:latest
-                run: echo "hello world"
+                image: repoman-repo-qa:latest
+                run: /entrypoint.sh
 
