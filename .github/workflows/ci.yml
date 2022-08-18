@@ -29,10 +29,13 @@ jobs:
                 image: repoman-repo-qa:latest
                 run: printenv
                 #run: /entrypoint.sh
-                env:
-                  INPUT_GENTOO_REPO: '/tmp'
-                  INPUT_PORTAGE_VERSION: 'latest'
-                  INPUT_PROFILE: 'latest'
-                  INPUT_PATH: '/tmp'
-                  INPUT_REPOMAN_ARGS: '-p'
+                env: |
+                  INPUT_GENTOO_REPO:
+                    - /tmp
+                  
+                #INPUT_GENTOO_REPO: '/tmp'
+                #INPUT_PORTAGE_VERSION: 'latest'
+                #  INPUT_PROFILE: 'latest'
+                #  INPUT_PATH: '/tmp'
+                #  INPUT_REPOMAN_ARGS: '-p'
 
