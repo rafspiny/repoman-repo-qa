@@ -25,16 +25,14 @@ jobs:
 
             - name: 'Run command inside the docker container'
               env:
-                  INPUT_GENTOO_REPO: /tmp   
+                  INPUT_GENTOO_REPO: /tmp 
+                  INPUT_GENTOO_REPO: '/tmp'
+                  INPUT_PORTAGE_VERSION: 'latest'
+                  INPUT_PROFILE: 'latest'
+                  INPUT_PATH: '/tmp'
+                  INPUT_REPOMAN_ARGS: '-p'
               uses: addnab/docker-run-action@v3
               with:
                 image: repoman-repo-qa:latest
                 run: printenv
                 #run: /entrypoint.sh
-                 
-                #INPUT_GENTOO_REPO: '/tmp'
-                #INPUT_PORTAGE_VERSION: 'latest'
-                #  INPUT_PROFILE: 'latest'
-                #  INPUT_PATH: '/tmp'
-                #  INPUT_REPOMAN_ARGS: '-p'
-
