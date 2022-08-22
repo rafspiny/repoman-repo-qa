@@ -34,5 +34,5 @@ jobs:
               with:
                 image: repoman-repo-qa:latest
                 options: --env INPUT_REPOMAN_ARGS=-p --env INPUT_GENTOO_REPO=/tmp --env INPUT_PORTAGE_VERSION=latest --env INPUT_PROFILE=latest --env INPUT_PATH=/tmp
-                run: printenv
-                #run: /entrypoint.sh
+                  #run: printenv
+                run: /entrypoint.sh
