@@ -1,4 +1,5 @@
-FROM urbsaquaeductus/repoman_prepped:1.0
+FROM urbsaquaeductus/repoman_prepped:2.0
+RUN emerge --quiet repoman pkgcheck
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 0744 /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
