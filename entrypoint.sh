@@ -10,4 +10,4 @@ gentoo_repo="$INPUT_GENTOO_REPO"
 
 echo "Running 'repoman full $repoman_args' from $(pwd)"
 # shellcheck disable=SC2086
-#repoman full $repoman_args
+repoman full $repoman_args
