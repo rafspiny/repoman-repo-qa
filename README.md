@@ -26,7 +26,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - uses: rafspiny/repoman-ebuild-qa@v1
+            - uses: rafspiny/repoman-ebuild-qa@v2
 ```
 
 ## Input Parameters
